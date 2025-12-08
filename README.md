@@ -98,7 +98,9 @@ element.Bounds = new Rect(position, size);
 
 构建希沃白板插件项目，将会在插件 SDK 的辅助下生成插件安装包。插件安装包有以下不同形态，可选某一形态进行分发
 
-- exe 包：这是独立的 exe 安装包，可以直接分发给到用户端，双击运行即可安装插件。这是最常见的分发文件。但是此 exe 安装包采用 .NET Framework 框架，要求用户端 .NET Framework 环境
+- exe 包：这是独立的 exe 安装包，可以直接分发给到用户端，双击运行即可安装插件。这是最常见的分发文件
+  - ~~但是此 exe 安装包采用 .NET Framework 框架，要求用户端 .NET Framework 环境~~
+  - 从 2.1.1-alpha.1 的 SDK 版本开始，应用 https://github.com/dotnet-campus/DotNetCampus.Installer 技术，采用 .NET 6 的安装包，不再要求用户端 .NET Framework 环境，运行时环境将复用希沃白板 .NET 环境
 - zip 包：包含插件的所有文件，可用于给杀毒软件报备
 - enp 包：用于发布到希沃白板应用中心的包，将由希沃白板应用中心托管安装。仅仅只是将 zip 包后缀名改为 enp 而已
 - enpx 包：属于 zip 包格式，内部存放 .NET 6 框架的 exe 独立安装包。目的是为了解决 .NET 6 框架依赖发布的独立安装包的 .NET Runtime 环境依赖问题。由希沃白板 AppHost 进程托管启动
@@ -425,6 +427,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Seewo\EasiNote5
 ### 插件 SDK 版本记录
 
 - 2.0.0-alpha405 ： 适配希沃白板 5.2.4.8298 版本
+- 2.1.1-alpha.1 ： 插件安装包采用 .NET 6 框架版本，不再依赖 .NET Framework 环境
 
 ## 插件群
 
